@@ -12,6 +12,19 @@ int main(void)
   {
     cout<<" "<<arr[j]<<" ";
   }
-  
+  int i,mark=0,temp;
+  while(mark<30)
+  {
+    i=rand() % 30 + mark;
+    temp=arr[mark];
+    arr[mark]=arr[i];
+    arr[i]=temp;
+    mark++;
+  }
+  cout<<"\n Shuffled Array:\n";
+  for(int j=0;j<30;j++)
+  {
+    cout<<" "<<arr[j]<<" ";
+  }
   return 0;
 }
