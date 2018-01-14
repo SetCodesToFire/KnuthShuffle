@@ -15,7 +15,8 @@ int main(void)
   int i,mark=0,temp;
   while(mark<30)
   {
-    i=rand() % 30 + mark;
+    i=rand() % (30-mark) + mark;
+    if(i>29) return 0;
     temp=arr[mark];
     arr[mark]=arr[i];
     arr[i]=temp;
