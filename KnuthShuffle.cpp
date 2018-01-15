@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <dos.h>
 
 using namespace std;
 
@@ -9,34 +10,9 @@ void BruteForce();
 
 int main(void)
 {
-  //KnuthShuffle();
-  srand (time(NULL));
-  int arr[]={1,2,3,4,5,6,7,8,9,10,11,12,13,
-    14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30};
-  cout<<"\n UnShuffled Array:\n";
-  for(int j=0;j<30;j++)
-  {
-    cout<<" "<<arr[j]<<" ";
-  }
-  int i,pos=0;
-  int shuffarr[30];
-  for(int j=29;j>0;j--)
-  {
-
-    i= rand() % j;
-    shuffarr[pos] = arr[i];
-    for(int delpos=i;delpos<=j;delpos++)
-    {
-      arr[delpos]=arr[delpos+1];
-    }
-    pos++;
-  }
-
-  cout<<"\n Shuffled Array:\n";
-  for(int j=0;j<30;j++)
-  {
-    cout<<" "<<shuffarr[j]<<" ";
-  }
+  KnuthShuffle();
+  sleep(1000);
+  BruteForce();
   return 0;
 }
 
@@ -69,5 +45,29 @@ void KnuthShuffle()
 
 void BruteForce()
 {
-
+  srand (time(NULL));
+  int arr[]={1,2,3,4,5,6,7,8,9,10,11,12,13,
+    14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30};
+  cout<<"\n UnShuffled Array:\n";
+  for(int j=0;j<30;j++)
+  {
+    cout<<" "<<arr[j]<<" ";
+  }
+  int i,pos=0;
+  int shuffarr[30];
+  for(int j=29;j>0;j--)
+  {
+    i= rand() % j;
+    shuffarr[pos] = arr[i];
+    for(int delpos=i;delpos<=j;delpos++)
+    {
+      arr[delpos]=arr[delpos+1];
+    }
+    pos++;
+  }
+  cout<<"\n Shuffled Array:\n";
+  for(int j=0;j<30;j++)
+  {
+    cout<<" "<<shuffarr[j]<<" ";
+  }
 }
